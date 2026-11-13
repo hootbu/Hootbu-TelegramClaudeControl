@@ -50,5 +50,10 @@ launchctl bootstrap "gui/$(id -u)" "$PLIST"
 
 rm -rf "$APP"
 osacompile -o "$APP" "$DIR/baslat.applescript"
+cp "$DIR/media/AppIcon.icns" "$APP/Contents/Resources/applet.icns"
+rm -f "$APP/Contents/Resources/Assets.car"
+/usr/libexec/PlistBuddy -c "Delete :CFBundleIconName" "$APP/Contents/Info.plist" 2>/dev/null || true
+codesign --force --sign - "$APP" 2>/dev/null
+touch "$APP"
 
 echo "Kuruldu. Masaüstündeki Telegram Claude simgesi servisi açıp kapatır. Log: $LOG"

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="media/icon.png" alt="" width="88" height="88">
+</p>
+
 <h1 align="center">Hootbu Telegram Claude Control</h1>
 
 <p align="center">
